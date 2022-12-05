@@ -1,0 +1,195 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    background-image: url("img/wall.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    font-family: 'Trirong', serif;
+    font-size: 700%;
+    text-align: center;
+    line-height: 110%;
+}
+
+a{
+    font-family: 'Sahitya', serif;
+    text-decoration: none;
+    color: black;
+    font-size: 190%;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+label, input{
+    font-family: 'Trykker', serif;
+    font-size: 150%;
+    text-align: center;
+}
+
+.flex-row{
+    display: flex;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/************************************************ HEADER  ************************************************/
+header{
+    height: 5rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav{
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+/************************************************ MAIN  ************************************************/
+main{
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/************************************************ FOOTER  ************************************************/
+footer{
+    justify-content: center;
+}
+
+#git{
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    color: black;
+    transition: 0.2s;
+}
+
+#git:hover{
+    color: rgb(152, 124, 33);
+    transition: 0.7s;
+}
+
+#msgerror{
+    font-size: 80%;
+    color: red;
+    text-align: center;
+}
+
+#msgok{
+    font-size: 80%;
+    color: green;
+    text-align: center;
+}
+
+
+/************************************************ INSCRIPTION.PHP  ************************************************/
+#form-container{
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: fit-content;
+    padding: 3%;
+}
+
+input{
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 8%;
+    font-size: 100%;
+}
+
+#mybutton{
+    margin-top: 5%;
+    margin-bottom: 0;
+    align-self: center;
+    background-color: #fff;
+    cursor: pointer;
+    width: auto;
+    font-size: 150%;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+#mybutton:hover{
+    transform: scale(0.9);
+    background-color: rgb(201, 171, 2);
+    color: white;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+
+
+
+/************************************************ LIVREOR.PHP  ************************************************/
+#mybutton1_a{
+    align-self: center;
+}
+
+#mybutton1{
+    align-self: center;
+    align-self: center;
+    background-color: #fff;
+    cursor: pointer;
+    width: auto;
+    font-size: 60%;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+#mybutton1:hover{
+    background-color: rgb(201, 171, 2);
+    color: white;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+
+#comments-container{
+    padding: 5%;
+    width: 40rem;
+}
+
+#post{
+    margin: 0;
+    border-top: 1px solid black;
+    color: rgb(87, 83, 83);
+    font-size: 130%;
+    font-weight: bold;
+}
+
+#comment{
+    margin: 0;
+    color: black;
+    font-size: 130%;
+}
+
+
+
+
+
+/************************************************ COMMENTAIRE.PHP  ************************************************/
+#commentaire{
+    width: 200%;
+    height: 10rem;
+    padding: 1%;
+    align-self: center;
+    font-size: 150%;
+}
+
