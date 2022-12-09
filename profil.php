@@ -49,8 +49,8 @@
                             break;
                         }
                     }
-                    // Si $testLogin est true, on le modifie et on déconnecte
-                    if ($testLogin){
+                    // Si $testLogin est true et que le login fait plus de 5 caractères, on le modifie et on déconnecte
+                    if ($testLogin && strlen($login) > 5){
                         $request = $mysqli->query("UPDATE `utilisateurs` SET login='$login' WHERE login='$sessionLogin'");
                         header('location: deconnexion.php');
                     }
@@ -73,7 +73,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">

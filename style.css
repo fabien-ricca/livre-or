@@ -11,6 +11,7 @@ body{
     background-image: url("img/wall.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 h1{
@@ -61,7 +62,7 @@ nav{
 
 /************************************************ MAIN  ************************************************/
 main{
-    height: 100%;
+    height: fit-content;
     justify-content: center;
     align-items: center;
 }
@@ -83,18 +84,6 @@ footer{
 #git:hover{
     color: rgb(152, 124, 33);
     transition: 0.7s;
-}
-
-#msgerror{
-    font-size: 80%;
-    color: red;
-    text-align: center;
-}
-
-#msgok{
-    font-size: 80%;
-    color: green;
-    text-align: center;
 }
 
 
@@ -134,7 +123,12 @@ input{
     transition: 0.5s;
 }
 
-
+#msgerror{
+    font-size: 140%;
+    font-weight: bold;
+    color: rgb(165, 11, 11);
+    text-align: center;
+}
 
 
 /************************************************ LIVREOR.PHP  ************************************************/
@@ -160,28 +154,30 @@ input{
     transition: 0.5s;
 }
 
-
 #comments-container{
+    margin-top: 3em;
+    margin-bottom: 3em;
     padding: 5%;
     width: 40rem;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.284);
 }
 
 #post{
     margin: 0;
-    border-top: 1px solid black;
     color: rgb(87, 83, 83);
     font-size: 130%;
     font-weight: bold;
+    max-width: 35rem;
 }
 
 #comment{
     margin: 0;
+    margin-left: 1em;
     color: black;
-    font-size: 130%;
+    font-size: 130%;    
+    overflow-wrap: anywhere;
 }
-
-
-
 
 
 /************************************************ COMMENTAIRE.PHP  ************************************************/

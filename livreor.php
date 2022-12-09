@@ -20,6 +20,7 @@
             
             <section class="flex-column" id="table-container">
 
+                <!-- Si un utilisateur est connecté, il doit voir le lien -->
                 <?php if(isset($_SESSION['login'])){ ?>
                     <a href="commentaire.php" id="mybutton1_a"><button id="mybutton1">Laisser un commentaire</button></a>
                 <?php }; ?>
@@ -35,7 +36,13 @@
                             for($j=0; isset($users[$j]); $j++){
                                 //Si id === id_user 
                                 if($users[$j][0] === $comments[$i][2]){
-                                    echo '<p id="post">Posté le ' . $comments[$i][3] . ' par ' . $users[$j][1] . '</p><br>' . '<p id="comment">' . $comments[$i][1] . '</p><br><br>';
+                                    //On redéfinit le format de la date, et on affiche le commetaire
+                                    $dateDB = $comments[$i][3];
+                                    $date = date('d-m-Y H:i', strtotime($dateDB));
+                                    echo '<p id="post">Posté le ' . $date . 
+                                        ' par ' . $users[$j][1] . '</p><br>' . 
+                                        '<p id="comment">' . $comments[$i][1] . 
+                                        '</p><br><br>';
                                     break;
                                 }
                             }

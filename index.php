@@ -21,7 +21,7 @@
         <h1>Paper-Topia</h1>
 
     <?php } else{?>
-        <h1><?php echo 'Ravie de vous revoir ' . $_SESSION['login'] ?></h1>
+        <h1><?php echo 'Ravi de vous revoir ' . $_SESSION['login'] ?></h1>
     <?php } ?>
 
         

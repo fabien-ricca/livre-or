@@ -8,7 +8,7 @@
             <a href="connexion.php">Je me connecte</a>
             <a href="livreor.php">Livre d'or</a>
 
-        <!-- Si une Session user est ouverte -->
+        <!-- Si une Session est ouverte -->
         <?php } else{?>
             <a href="profil.php">Modifier mon profil</a>
             <a href="livreor.php">Livre d'or</a>

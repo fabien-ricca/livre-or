@@ -17,12 +17,12 @@
             $testPassword = false;      // On crée le boléen pour le test du mdp
 
             
-            // Si les champs ne soient pas vides
+            // Si le champ de login n'est pas vide
             if($login){
                 // On vérifie que le Login n'existe pas, Si oui on créé le message d'erreur et on sort de la boucle
                 foreach($users as $user){
                     if($user[1] === $login){                        
-                        $msgError = "<p id='msgerror'>!! Le pseudo " . $login . ' est déjà utilisé !!</p>';
+                        $msgError = "<p id='msgerror'>!! Le login " . $login . ' est déjà utilisé !!</p>';
                         $testLogin = false;
                         break;
                     }
@@ -36,8 +36,8 @@
                     }
                     // Sinon message d'erreur
                     else{
-                        $msgError = "<p id='msgerror'> !! Le mot de passe doit contenir au moins 8 cractères dont
-                        1 lettre majuscule, 1 lettre minuscule et 1 chiffre!! </p>";
+                        $msgError = "<p id='msgerror'> !! Le mot de passe doit contenir au moins 8 caractères dont
+                        1 lettre majuscule, 1 lettre minuscule, 1 caractère spéciale et 1 chiffre!! </p>";
                     }
                 }
                 // Sinon message d'erreur
@@ -46,10 +46,15 @@
                 }
 
                 // Si les deux conditions rons true, on crypte le mdp, on crée l'utilisateur, et on redirige vers la page deconnexion
-                if($testLogin && $testPassword){                        
-                    $cryptPassword = password_hash($password, PASSWORD_BCRYPT);
-                    $request = $mysqli->query("INSERT INTO `utilisateurs`(`login`, `password`) VALUES ('$login', '$cryptPassword')");
-                    header("location: connexion.php");
+                if($testLogin && $testPassword){  
+                    if(strlen($login) > 5){                      
+                        $cryptPassword = password_hash($password, PASSWORD_BCRYPT);
+                        $request = $mysqli->query("INSERT INTO `utilisateurs`(`login`, `password`) VALUES ('$login', '$cryptPassword')");
+                        header("location: connexion.php");
+                    }
+                    else{
+                        $msgError = "<p id='msgerror'>Le login doit faire au minimum 5 caractères.</p>";
+                    }
                 } 
             }
             // Sinon message d'erreur
@@ -61,7 +66,7 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->  
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,7 +85,7 @@
             <div class="flex-row" id="form-container">
                 <form action="" Method="POST" class="flex-column">
                     <label for="login">Nom d'utilisateur</label>
-                    <input type="text" id="login" name="login" >
+                    <input type="text" id="login" name="login" placeholder="Min. 5 caractères">
 
                     <label for="password">Mot de passe</label>
                     <input type="password" id="password" name="password" >

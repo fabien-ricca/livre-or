@@ -14,9 +14,10 @@
         for($i=0; isset($users[$i]); $i++){
             //Si les login correspondent et que les mdp correspondent
             if($users[$i][1] === $login && password_verify($password, $users[$i][2])){
-                $testConnexion = true;                  // On passe sur true
+                $testConnexion = true;                      // On passe sur true
                 $_SESSION['id_user'] = $users[$i][0];       // On attribue des $_SESSION[''] avec les infos de l'user en BDD
-                $_SESSION['login'] = $users[$i][1];     
+                $_SESSION['login'] = $users[$i][1];         // On attribue des $_SESSION[''] avec les infos de l'user en BDD
+                $_SESSION['password'] = $users[$i][2];
                 break;
             }
         }
@@ -34,7 +35,7 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
