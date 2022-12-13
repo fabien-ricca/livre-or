@@ -13,7 +13,8 @@
         $commentaire=htmlspecialchars($_POST['commentaire']);   // On récupère le login saisi
         $idUser = $_SESSION['id_user'];                         // On attribut le $_SESSION['id_user'] pour simplifier les requêtes SQL
         date_default_timezone_set('Europe/Paris');              //On définit le timezone pour avoir le bon fuseau d'horaire
-        $date = date('Y-d-m H:i');                           // On récupère la date et l'heure
+        $date = date('Y-m-d H:i:s');  
+        // On récupère la date et l'heure
 
         //var_dump($_POST);
         //var_dump($_SESSION);
